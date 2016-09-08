@@ -3,6 +3,18 @@ class TweetsController < ApplicationController
 
   before_filter :authenticate_user!
 
+  def new
+    @tweet = Tweet.new
+  end
+
+  def show
+
+  end
+
+  def index
+    @t = Tweet.all
+  end
+
   def create
     @tweet = Tweet.new(tweet_params)
 
