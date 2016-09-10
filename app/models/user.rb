@@ -12,5 +12,9 @@ class User < ActiveRecord::Base
   has_many :inverse_friends, through: :inverse_relationships, source: :user
   has_many :likes
 
+  def likes?(tweet)
+    tweet.likes.where(user_id: id).any?
+  end
+
   validates :username, presence: true, uniqueness: true
 end

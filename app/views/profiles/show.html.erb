@@ -12,4 +12,6 @@
   <% end %>
 <% end %>
 
+<%= render 'shared/likes' %>
+
 <%= link_to "Follow", relationships_path(friend_id: @user), method: :post %>
