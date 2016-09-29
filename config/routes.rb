@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   get 'profiles/:id' => 'profiles#show', as: :profile
 
   get 'profiles' => 'profiles#index'
-
+  get 'feed' => 'profiles#feed'
   resources :tweets do
     resource :like
   end
-  
+
   resources :relationships
 
   # The priority is based upon order of creation: first created -> highest priority.
